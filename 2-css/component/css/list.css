@@ -1,0 +1,36 @@
+.list {
+  list-style-type: none;
+  border: 1px solid black;
+  padding-left: 0;
+  padding: 10px;
+}
+
+.list-item {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.list-item.active {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 480px) {
+  .list {
+    display: none;
+  }
+
+  .list.active {
+    display: block;
+  }
+
+  .list-item {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .list-item:last-child {
+    margin-bottom: 0;
+  }
+}
