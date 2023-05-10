@@ -63,3 +63,19 @@
 .m-none {
   margin: 0;
 }
+
+.img-square {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  height: auto;
+}
+
+.img-float {
+  margin-top: -150px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+
+.mt-200 {
+  margin-top: 200px;
+}
