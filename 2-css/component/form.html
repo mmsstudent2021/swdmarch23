@@ -19,6 +19,7 @@
             type="text"
             name="your_name"
             id="your_name"
+            placeholder="eg. hein htet zan"
           />
         </div>
         <div class="input-div">
@@ -28,8 +29,64 @@
             type="text"
             name="your_email"
             id="your_email"
+            placeholder="eg. hhz@gmail.com"
           />
         </div>
+
+        <div class="input-div">
+          <label class="input-label" for="password">Password</label>
+          <input
+            class="form-input"
+            type="password"
+            name="password"
+            id="password"
+            minlength="8"
+          />
+        </div>
+        <div class="input-div">
+          <label class="input-label" for="role">Select Your Role</label>
+          <select class="from-select" name="role" id="role">
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="UI Designer">UI Designer</option>
+          </select>
+        </div>
+
+        <div class="input-div">
+          <label class="input-label" for="role">Your Skill</label>
+          <input
+            type="checkbox"
+            name="skill"
+            id="html"
+            value="html"
+            class="form-check"
+          />
+          <label for="html">HTML</label>
+
+          <input
+            type="checkbox"
+            name="skill"
+            id="css"
+            value="css"
+            class="form-check"
+          />
+          <label for="css">CSS</label>
+
+          <input
+            type="checkbox"
+            name="skill"
+            id="js"
+            value="js"
+            class="form-check"
+          />
+          <label for="js">JavaScript</label>
+        </div>
+
+        <div class="input-div">
+          <label class="input-label" for="address">Address</label>
+          <textarea class="form-textarea" name="" id="" rows="7"></textarea>
+        </div>
+
         <button class="btn">Register</button>
       </fieldset>
     </form>
