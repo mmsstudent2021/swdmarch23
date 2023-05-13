@@ -15,27 +15,29 @@
 }
 
 body {
-  background-color: #edede9;
+  background-color: #ffcdab;
 }
 
 .form {
 }
 
 .form-div {
+  background-color: #ffa45c;
+
   width: 400px;
   margin: 100px auto;
-  border-radius: 0;
+  border-radius: 10px;
   border: 1px solid black;
   padding: 25px;
-  background-color: #d5bdaf;
 }
 
 .form-title {
   text-align: center;
   font-size: 25px;
-  background-color: #d5bdaf;
+  background-color: #ffa45c;
   border: 1px solid black;
-  padding: 10px;
+  padding: 15px 20px;
+  border-radius: 10px;
 }
 
 .input-div {
@@ -52,20 +54,64 @@ body {
   display: block;
   width: 100%;
   padding: 10px 15px;
-  border-radius: 0px;
+  border-radius: 5px;
   border: 1px solid black;
   font-size: 14px;
+  background-color: #5d5d5a;
+  color: #fff4e3;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder,
+.from-select::placeholder {
+  color: #fff4e3;
 }
 
 .form-input:focus-visible,
 .form-textarea:focus-visible,
 .from-select:focus-visible {
   outline: none;
+  /* border: 2px solid red; */
+}
+
+.from-select {
+  appearance: none;
+  background-image: url("./img/arrow-drop-down-svgrepo-com.svg");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.form-check {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.form-check label {
+  user-select: none;
+}
+
+.form-check-input {
+  /* accent-color: black; */
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.form-check-input:checked {
+  background-color: black;
+  background-image: url(./img/check-mark-svgrepo-com.svg);
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .btn {
   padding: 10px 15px;
-  border-radius: 0px;
+  border-radius: 5px;
   border: 1px solid black;
   font-size: 14px;
   background-color: black;
@@ -73,8 +119,4 @@ body {
   display: block;
   margin: auto;
   /* float: right; */
-}
-
-.form-check {
-  accent-color: black;
 }
