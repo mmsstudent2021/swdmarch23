@@ -1,0 +1,41 @@
+.h-400px{
+    height: 400px;
+}
+
+
+.flex{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: flex-start;
+    /* align-content: flex-start; */
+}
+
+.flex div{
+    /* width: 300px; */
+    height: 100px;
+}
+
+
+.flex div:nth-child(1){
+    flex-grow: 1;
+    order: 3;
+}
+
+.flex div:nth-child(2){
+    flex-grow:1;
+    order: 1;
+
+}
+
+.flex div:nth-child(3){
+    flex-grow: 1;
+    order: 4;
+
+}
+
+.flex div:nth-child(4){
+    flex-grow: 1;
+    order: 2;
+
+}
+

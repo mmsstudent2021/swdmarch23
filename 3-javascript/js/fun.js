@@ -91,16 +91,16 @@ let rates = {
 // console.log(exchangeToCurrency(70000, "sgd"));
 // console.log(exchangeToCurrency(1230000, "eur"));
 
-let fruits = {
-  apple: 500,
-  orange: 450,
-  mango: 1000,
-  banana: 200,
-};
+// let fruits = {
+//   apple: 500,
+//   orange: 450,
+//   mango: 1000,
+//   banana: 200,
+// };
 
-let records = [];
-let count = 0;
-let total = 0;
+// let records = [];
+// let count = 0;
+// let total = 0;
 
 // 100mmk 5% is 5mmk
 // 300mmk 5% is 15mmk
@@ -108,29 +108,77 @@ let total = 0;
 // 300 * 0.05
 // 300 * 0.1
 
-function calculateTax(amount, percentage = 5) {
-  return amount * (percentage / 100);
-}
+// function calculateTax(amount, percentage = 5) {
+//   return amount * (percentage / 100);
+// }
 
-function calculateCost(item, quantity) {
-  let currentItemPrice = fruits[item];
-  let cost = quantity * currentItemPrice;
-  records[count++] = {
-    item,
-    quantity,
-    cost,
-  };
-  total += cost;
-  return cost + "mmk";
-}
+// function calculateCost(item, quantity) {
+//   let currentItemPrice = fruits[item];
+//   let cost = quantity * currentItemPrice;
+//   records[count++] = {
+//     item,
+//     quantity,
+//     cost,
+//   };
+//   total += cost;
+//   return cost + "mmk";
+// }
 
-console.log(calculateCost("apple", 5));
-console.log(calculateCost("orange", 15));
-console.log(calculateCost("mango", 3));
-console.log(calculateCost("banana", 3));
-console.table(records);
-console.table({
-  total,
-  tax: calculateTax(total),
-  subTotal: total + calculateTax(total),
-});
+// console.log(calculateCost("apple", 5));
+// console.log(calculateCost("orange", 15));
+// console.log(calculateCost("mango", 3));
+// console.log(calculateCost("banana", 3));
+// console.table(records);
+// console.table({
+//   total,
+//   tax: calculateTax(total),
+//   subTotal: total + calculateTax(total),
+// });
+
+// let run = function () {
+//   console.log("*");
+//   console.log("* *");
+//   console.log("* * *");
+// };
+
+// console.log(run());
+// console.log(run());
+
+// (function () {
+//   console.log("*");
+//   console.log("* *");
+//   console.log("* * *");
+// })();
+
+// let x = function () {
+//   return "x";
+// };
+
+// let y = function () {
+//   return "y" + x();
+// };
+
+// console.log(y());
+
+// let x = 5;
+// const y = 10;
+
+// {
+//   console.log(x, y);
+// }
+
+// function run() {
+//   console.log(x);
+//   console.log(y);
+// }
+
+// run();
+// console.log(x, y);
+
+// var z = 15;
+// function run() {
+//   console.log(z);
+// }
+
+// console.log(run());
+// console.log(z);

@@ -1,0 +1,14 @@
+.poe {
+    width: 400px;
+    height: 200px;
+    object-position: top;
+}
+
+.poe-bg{
+    background-image: url("../images/pattern-2.png");
+}
+
+
+.box{
+    height: 400px;
+}
