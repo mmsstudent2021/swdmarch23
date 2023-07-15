@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "custom" ;
+    src: url("../fonts/Aller/Aller_Bd.ttf");
+    /* font-weight: 600; */
+}
+
+@font-face {
+    font-family: "para";
+    src: url(../fonts/rubik/Rubik-Regular.ttf);
+}
+
+
+h1{
+    font-family: "custom";
+}
+
+p{
+    font-family: "para";
+}

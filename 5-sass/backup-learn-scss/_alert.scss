@@ -1,0 +1,26 @@
+%alert{
+    
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+    display: block;
+    box-shadow: 0 0 5px;
+}
+
+.alert-primary{
+    border: 2px solid blue;
+    background-color: blue;
+    @extend %alert;
+}
+
+.alert-danger{
+    border: 2px solid red;
+    background-color: red;
+    @extend %alert;
+}
+
+.alert-success{
+    border: 2px solid green;
+    background-color: green;
+    @extend %alert;
+}

@@ -1,0 +1,44 @@
+
+.box{
+    position: relative;
+}
+
+.img{
+    /* transform: translateX(-70px) translateY(-50px); */
+    /* transform: rotate(0deg); */
+    /* transform: scale(0.8); */
+    /* transform: skewX(10deg); */
+
+    /* transform: translate(-10px,20px) rotate(10deg) scale(0.7) skewY(10deg); */
+
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    /* transform: translate(-200px); */
+    /* position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    transform: translateY(50%);
+    */
+    /* transform: scale(0.5) translateY(-150%); */
+
+    transform: rotateX(50deg);
+    transition: 0.5s; 
+}
+
+
+/* slide to right */
+/* slide down */
+/* zoom in */
+
+.box:hover .img{
+    /* transform: translateY(0); */
+
+    /* transform: scale(1) translateY(0); */
+    
+
+}

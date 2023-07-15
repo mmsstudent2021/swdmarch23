@@ -1,0 +1,26 @@
+
+
+.box-1{
+
+    animation-name: slideDown;
+    animation-duration: 5s;
+    /* animation-delay: 3s; */
+    animation-fill-mode: both;
+    /* animation-iteration-count: 5; */
+    /* animation-direction: alternate; */
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes slideDown {
+    from{
+        transform: translateY(-300px);
+        /* background-color: red; */
+    }
+
+    to{
+        transform: translateY(500px);
+        /* background-color: orangered; */
+
+    }
+}

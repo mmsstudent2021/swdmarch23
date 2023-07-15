@@ -1,0 +1,42 @@
+$primary-color: #333;
+
+header{
+    display: flex;
+}
+
+.brand{
+    height: 50px;
+}
+
+.brand-img{
+    height: 100%;
+}
+
+nav{
+
+    background-color: gray;
+    box-shadow: 0 0 5px;
+
+    ul{
+
+        margin-left: auto;
+
+        li{
+            border: 1px solid black;
+            border-radius: 5px;
+
+            a{
+
+                color: $primary-color;
+            }
+
+            a:hover{
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+    ul:hover{
+        transform: rotate(45deg);
+    }
+}
