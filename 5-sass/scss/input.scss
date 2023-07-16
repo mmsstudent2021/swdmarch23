@@ -1,1 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Tektur:wght@400;700&family=Victor+Mono:wght@400;700&display=swap');
+
+// $primary : #581b98;
+// $secondary : #f3558e;
+// $success : #107a8b;
+// $danger : #85203b;
+
+
+$body-bg : rgb(133, 133, 133);
+
+// customize button
+// $btn-border-radius :0px;
+// $btn-padding-x : 30px;
+// $btn-font-weight : bolder;
+// $btn-box-shadow : 5px 5px black !important;
+// $input-btn-padding-x : 50px;
+
+$display-font-family : 'Playfair Display', serif;
+$headings-font-family : 'Tektur', cursive;
+$font-family-sans-serif : 'Victor Mono', monospace;
+
+// $border-radius : 100px;
+// $spacer : 3rem;
+
+
+//map
+$theme-colors: (
+  "primary":    #581b98,
+  "hhz" : orangered,
+//   "secondary":  $secondary,
+//   "success":    $success,
+//   "info":       $info,
+//   "warning":    $warning,
+  "danger":     red,
+//   "light":      $light,
+//   "dark":       $dark
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  10: $spacer * 6,
+  20: $spacer * 12,
+);
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// @include media-breakpoint-only(sm) { 
+//     .box{
+//         width: 100px;
+//         height: 100px;
+//         background-color: $primary;
+//         border-radius: 50%;
+//     }
+//  }
+
+@include media-breakpoint-up(lg) { 
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: $primary;
+    }
+ }
