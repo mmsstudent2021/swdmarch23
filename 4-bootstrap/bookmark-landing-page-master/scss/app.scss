@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap");
+
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+$font-family-sans-serif: "Rubik", "Padauk", sans-serif;
+
+$primary: hsl(231, 69%, 60%);
+$danger: hsl(0, 94%, 66%);
+
+$font-size-base: 1rem;
+$navbar-nav-link-padding-x: 30px;
+$btn-padding-x: 30px;
+$btn-padding-y: 12px;
+
+$font-weight-bold: 500;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 9,
+  8: $spacer * 12,
+  9: $spacer * 15,
+  10: $spacer * 18,
+);
+
+$nav-link-padding-y: 1rem;
+$nav-link-padding-x: 2rem;
+$nav-link-color : black;
+$nav-underline-link-active-color : $danger;
+
+// $theme-colors: (
+//     "blue" : hsl(231, 69%, 60%),
+//     "red" : hsl(0, 94%, 66%)
+// //   "primary":    $primary,
+// //   "secondary":  $secondary,
+// //   "success":    $success,
+// //   "info":       $info,
+// //   "warning":    $warning,
+// //   "danger":     $danger,
+// //   "light":      $light,
+// //   "dark":       $dark
+// );
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+#hero {
+  background-image: url(../images/rectangle.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 35%;
+}
+
+.hero-img {
+  img {
+    width: 100%;
+  }
+}
+
+#feature {
+  background-image: url(../images/rectangle-left.svg);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 35%;
+
+  .nav-link{
+    padding: 1rem 2rem;
+    
+  }
+  
+}
+
+// .nav-link{
+//     text-transform: uppercase;
+// }
+
+// .hero-img{
+//     position: relative;
+// }
+
+// .hero-img::after{
+//     position: fixed;
+//     content: "";
+//     width: 300px;
+//     height: 300px;
+//     background-color: #5368df;
+//     z-index: 1;
+//     // bottom: 0px;
+//     right: 0;
+//     border-radius: 50% 0 0 50%;
+// }
+
+
