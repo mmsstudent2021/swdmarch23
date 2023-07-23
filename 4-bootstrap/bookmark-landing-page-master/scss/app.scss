@@ -7,10 +7,14 @@ $font-family-sans-serif: "Rubik", "Padauk", sans-serif;
 $primary: hsl(231, 69%, 60%);
 $danger: hsl(0, 94%, 66%);
 
+
 $font-size-base: 1rem;
 $navbar-nav-link-padding-x: 30px;
 $btn-padding-x: 30px;
 $btn-padding-y: 12px;
+
+$input-padding-x: 30px;
+$input-padding-y: 12px;
 
 $font-weight-bold: 500;
 
@@ -47,6 +51,8 @@ $nav-underline-link-active-color : $danger;
 // //   "dark":       $dark
 // );
 
+$accordion-icon-color : $primary;
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 #hero {
@@ -73,6 +79,11 @@ $nav-underline-link-active-color : $danger;
     
   }
   
+}
+
+
+footer{
+  background-color: hsl(229, 31%, 21%);
 }
 
 // .nav-link{
