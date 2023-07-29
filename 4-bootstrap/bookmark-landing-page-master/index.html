@@ -4,7 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Bookmark landing page</title>
-    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="icon" href="./images/favicon-32x32.png" />
+
+    <!-- Primary Meta Tags -->
+    <title>San Kyi Tar Par</title>
+    <meta name="title" content="San Kyi Tar Par" />
+    <meta
+      name="description"
+      content="Bootstrap, Sass, san kyi tar phyit par tal"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mms-it.com" />
+    <meta property="og:title" content="San Kyi Tar Par" />
+    <meta
+      property="og:description"
+      content="Bootstrap, Sass, san kyi tar phyit par tal"
+    />
+    <meta
+      property="og:image"
+      content="./design/desktop-preview.jpg"
+    />
+    
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mms-it.com" />
+    <meta property="twitter:title" content="San Kyi Tar Par" />
+    <meta
+      property="twitter:description"
+      content="Bootstrap, Sass, san kyi tar phyit par tal"
+    />
+    <meta
+      property="twitter:image"
+      content="./design/desktop-preview.jpg"
+    />
+
+
+    <link rel="stylesheet" href="./css/output.css" />
+
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-transparent py-4">
@@ -55,23 +95,31 @@
         </div>
       </div>
     </nav>
-    <section id="hero" class="my-7">
+    <section id="hero" class="my-md-5 my-lg-7">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-12 col-md-6">
-            <h1 class="display-4 fw-bold mb-4">A Simple Bookmark Manager</h1>
+          <div class="col-12 col-lg-6">
+            <div class="text-center text-lg-start">
+              <h1 class="display-4 fw-bold mb-4 hero-display-text mb-">
+                A Simple Bookmark Manager
+              </h1>
 
-            <p class="mb-4 text-black-50">
-              A clean and simple interface to organize your favourite <br />
-              websites. Open a new browser tab and see your sites load <br />
-              instantly. Try it for free.
-            </p>
+              <p class="mb-4 text-black-50">
+                A clean and simple interface to organize your favourite
+                <br class="d-none d-md-block" />
+                websites. Open a new browser tab and see your sites load
+                <br class="d-none d-md-block" />
+                instantly. Try it for free.
+              </p>
 
-            <button class="btn btn-primary">Get it on Chrome</button>
-            <button class="btn btn-light">Get it on Firefox</button>
+              <button class="btn btn-primary">Get it on Chrome</button>
+              <button class="btn btn-light d-none d-md-inline-block">
+                Get it on Firefox
+              </button>
+            </div>
           </div>
-          <div class="col-12 col-md-6">
-            <div class="hero-img">
+          <div class="col-12 col-lg-6">
+            <div class="hero-img mt-5 m-lg-0">
               <img src="./images/illustration-hero.svg" alt="" />
             </div>
           </div>
@@ -155,6 +203,7 @@
                   <div class="row align-items-center my-6">
                     <div class="col-12 col-md-6">
                       <img
+                        class="w-100"
                         src="./images/illustration-features-tab-1.svg"
                         alt=""
                       />
@@ -182,6 +231,7 @@
                   <div class="row align-items-center my-6">
                     <div class="col-12 col-md-6">
                       <img
+                        class="w-100"
                         src="./images/illustration-features-tab-2.svg"
                         alt=""
                       />
@@ -209,6 +259,7 @@
                   <div class="row align-items-center my-6">
                     <div class="col-12 col-md-6">
                       <img
+                        class="w-100"
                         src="./images/illustration-features-tab-3.svg"
                         alt=""
                       />
@@ -246,9 +297,9 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-center gx-5 mt-5">
-          <div class="col-12 col-lg-3">
-            <div class="text-center shadow rounded-4">
+        <div class="row justify-content-center gx-xl-5 mt-5">
+          <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+            <div class="text-center shadow rounded-4 mb-4 mb-lg-0">
               <div class="p-4">
                 <img src="./images/logo-chrome.svg" class="my-5" alt="" />
                 <h4>Add to Chrome</h4>
@@ -261,8 +312,8 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-3">
-            <div class="text-center shadow rounded-4 mt-0 mt-md-5">
+          <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+            <div class="text-center shadow rounded-4 mb-4 mb-lg-0 mt-0 mt-lg-5">
               <div class="p-4">
                 <img src="./images/logo-firefox.svg" class="my-5" alt="" />
 
@@ -276,8 +327,8 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-lg-3">
-            <div class="text-center shadow rounded-4 mt-0 mt-md-6">
+          <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+            <div class="text-center shadow rounded-4 mb-4 mb-lg-0 mt-0 mt-lg-6">
               <div class="p-4">
                 <img src="./images/logo-opera.svg" class="my-5" alt="" />
                 <h4>Add to Opera</h4>
@@ -439,10 +490,10 @@
               </h2>
               <form action="#" method="post">
                 <div class="row">
-                  <div class="col-8">
-                    <input type="text" class="form-control" />
+                  <div class="col-12 col-md-8">
+                    <input type="text" class="form-control mb-3 mb-md-0" />
                   </div>
-                  <div class="col-4">
+                  <div class="col-12 col-md-4">
                     <button class="btn btn-danger text-white">
                       Contact Us
                     </button>

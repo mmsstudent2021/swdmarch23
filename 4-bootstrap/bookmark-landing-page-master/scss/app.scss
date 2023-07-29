@@ -107,3 +107,20 @@ footer{
 // }
 
 
+@include media-breakpoint-only(lg) { 
+
+  .hero-display-text{
+    font-size: 3rem !important;
+  }
+
+}
+
+@include media-breakpoint-only(md) { 
+
+  
+
+}
+
+
+
+
