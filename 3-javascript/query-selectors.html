@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="m-5">
+      <!-- <h1 class="text-primary bg-primary-subtle p-3 rounded text-center font-monospace ">Hello Min Ga Lar Par</h1> -->
+
+      <!-- <a href="https://google.com" class=" btn btn-lg btn-primary">Google</a> -->
+
+      <!-- <img src="./images/poe-mamhe-thar-7.jpg" width="300" alt=""> -->
+
+      <!-- <input type="file" id="upload" multiple> -->
+
+      <div class="mb-3">
+
+        <label class="form-label">Select Gender</label>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+          />
+          <label class="form-check-label" for="male">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+            
+          />
+          <label class="form-check-label" for="female">
+            Female
+          </label>
+        </div>
+      </div>
+
+      <select name="" id="nations" class="form-select mb-3">
+        <option value="mm">Myanmar</option>
+        <option value="jp">Japan</option>
+        <option value="kr">korea</option>
+        <option value="ch">china</option>
+      </select>
+
+      <button id="btn" class="btn btn-primary">Show selected</button>
+    </div>
+
+    <script>
+      const btn = document.querySelector("#btn");
+      const nations = document.querySelector("#nations");
+        
+      const genders = document.querySelectorAll("[name=gender]");
+
+      btn.addEventListener("click", () => {
+        console.log(document.querySelector("[name='gender']:checked").value);
+
+        // console.log([...genders].find(el => el.checked === true).value);
+
+        console.log(nations.value);
+      });
+
+      // const inputFile = document.querySelector("#upload");
+
+      // console.log(inputFile);
+
+      // console.log(inputFile.value);
+
+      // const img = document.querySelector("img");
+
+      // console.dir(img);
+      // console.dir(img.src);
+      // console.dir(img.getAttribute("src"));
+
+      // const link = document.querySelector("a");
+
+      // link.setAttribute("data-id",1)
+
+      // console.log(link.getAttribute("data-id"));
+
+      // link.setAttribute("hhz","hein htet zan")
+
+      // console.log(link.getAttribute("href"));
+      // console.log(link.setAttribute("href","https://mms-it.com"));
+
+      // console.log(link.target);
+
+      // link.target = "_blank"
+
+      // console.dir(link);
+      // console.dir(link.href);
+
+      // link.href = "https://youtube.com"
+
+      // const h1 = document.querySelector("h1");
+
+      //access
+      // console.log(h1.classList);
+      // console.log(h1.className);
+
+      // value overwrite
+      // h1.className = "text-success bg-success-subtle font-monospace p-3 rounded text-center"
+
+      // console.log(window.getComputedStyle(h1).color);
+      // console.log(window.getComputedStyle(h1).fontSize);
+      // console.log(window.getComputedStyle(h1).width);
+
+      // // access
+      // console.dir(h1.style);
+      // console.log(h1.style.color);
+      // console.dir(h1.style.backgroundColor);
+
+      // // value overwrite
+      // h1.style.color = "green";
+      // h1.style.backgroundColor = "black"
+    </script>
+  </body>
+</html>
