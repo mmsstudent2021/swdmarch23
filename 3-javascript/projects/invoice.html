@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice App</title>
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <main id="app">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <header class="mb-5 py-3">
+              <h1 class="fw-bold">MMS Solutions</h1>
+              <h3 class="fw-bold text-black-50">Invoice App</h3>
+            </header>
+
+            <form id="recordForm" action="">
+              <div class="row mb-5 align-items-end bg-secondary-subtle py-3">
+                <div class="col">
+                  <label class="form-label" for="productSelect">
+                    Select Product
+                  </label>
+                  <select
+                    class="form-select"
+                    name="productSelect"
+                    id="productSelect"
+                    required
+                  >
+
+                
+                
+                </select>
+                </div>
+                <div class="col">
+                  <label class="form-label" for="quantityInput">
+                    Quantity
+                  </label>
+
+                  <input
+                    class="form-control"
+                    type="number"
+                    name="quantityInput"
+                    id="quantityInput"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <button id="recordAddBtn" class="btn btn-primary w-100">
+                    Add Record
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Product</th>
+                  <th class="text-end">Price</th>
+                  <th class="text-end">Quantity</th>
+                  <th class="text-end">Cost</th>
+                </tr>
+              </thead>
+              <tbody id="records">
+                <tr class="record-empty-row">
+                  <td colspan="5" class="text-center">There is no record</td>
+                </tr>
+               
+              </tbody>
+              <tfoot>
+                <tr>
+                    <td colspan="4" class="text-center">Total Cost</td>
+                    <td class="text-end" id="totalCost">0</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./js/invoice.js"></script>
+  </body>
+</html>

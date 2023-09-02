@@ -11854,5 +11854,24 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.slide-from-left {
+  animation: bounce 0.5s;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.record-empty-row:last-child {
+  display: table-row;
+}
+
+.record-empty-row {
+  display: none;
+}
 
 /*# sourceMappingURL=app.css.map */

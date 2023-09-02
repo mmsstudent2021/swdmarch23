@@ -35,7 +35,13 @@ const countList = () => {
   ).length;
 
   if (totalList === 0) {
-    lists.innerHTML = `<p class='text-center empty-stage'>There is no List</p>`;
+    lists.innerHTML = `
+    <div class='text-center empty-stage'>
+      <div>
+        <img width=100 class='mb-3 mt-5' src="./images/empty.svg">
+        <p>There is no List</p>
+      </div>
+    </div>`;
   } else {
     lists.querySelector(".empty-stage")?.remove();
   }
@@ -49,7 +55,7 @@ const createList = (listText) => {
 
   list.innerHTML = `
   <div
-      class="border border-2 border-primary p-3 d-flex justify-content-between align-items-start mb-3"
+      class=" animate__animated animate__flipInX border border-2 border-primary p-3 d-flex justify-content-between align-items-start mb-3"
     >
       <div class="form-check list-checker">
         <input
@@ -59,7 +65,7 @@ const createList = (listText) => {
           id="${checkerId}"
         />
         <label
-          class="form-check-label list-label"
+          class="form-check-label list-label "
           for="${checkerId}"
         >
           ${listText}
@@ -81,14 +87,29 @@ const createList = (listText) => {
   const listDelBtn = list.querySelector(".list-del-btn");
   listDelBtn.addEventListener("click", () => {
     const decision = window.confirm("Are U sure to Delete ?");
-    decision && list.remove();
+    if (decision) {
+      list
+        .querySelector(".animate__animated")
+        .classList.add("animate__fadeOutRight");
 
-    countList();
+      list
+        .querySelector(".animate__animated")
+        .addEventListener("animationend", () => {
+          list.remove();
+
+          countList();
+        });
+    }
   });
 
   const listChecker = list.querySelector(".list-checker");
   listChecker.addEventListener("click", () => {
     // console.log("U check");
+    list
+      .querySelector(".list-label")
+      .classList.add("text-decoration-line-through");
+    list.querySelector(".animate__animated").classList.add("animate__shakeX");
+
     countList();
   });
 
@@ -116,24 +137,31 @@ const createList = (listText) => {
 
 countList();
 addBtn.addEventListener("click", () => {
-  lists.append(createList(textInput.value));
+  const list = createList(textInput.value);
+  lists.append(list);
+  list
+    .querySelector(".animate__animated")
+    .addEventListener("animationend", () => {
+      console.log("hello");
+      list
+        .querySelector(".animate__animated")
+        .classList.remove("animate__flipInX", "animate__shakeX");
+    });
   countList();
   textInput.value = null;
 });
 
+// const obj = {
+//   a: "aaa",
+//   b: "bbb",
+//   // c : {
+//   //   x : "xxx",
+//   //   y : "yyy",
+//   //   z : "zzz"
+//   // }
+// };
 
-const obj = {
-  a : "aaa",
-  b : "bbb",
-  // c : {
-  //   x : "xxx",
-  //   y : "yyy",
-  //   z : "zzz"
-  // }
-
-}
-
-console.log(obj.a);
-console.log(obj.b);
-console.log(obj?.c);
-console.log(obj?.c?.y);
+// console.log(obj.a);
+// console.log(obj.b);
+// console.log(obj?.c);
+// console.log(obj?.c?.y);
