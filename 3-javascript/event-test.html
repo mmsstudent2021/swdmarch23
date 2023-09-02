@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            padding: 20px;
+        }
+        #btn{
+            /* padding: 30px;
+            margin: 30px; */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <button id="btn" onclick="run()">Click Me</button> -->
+
+    <!-- <select name="" id="selectLang">
+        <option value="mm">Myanmar</option>
+        <option value="en">English</option>
+        <option value="math">Math</option>
+    </select> -->
+
+    <!-- <input type="text" id="textInput">
+    <input type="text" >
+    <button id="btn" >Click Me</button> -->
+
+    <form action="https://mms-it.com" id="createForm">
+        <input type="text" name="your_name" required>
+        <input type="email" name="your_email">
+        <input type="date" name="date_of_birth">
+        <input type="number" name="salary">
+        <button>Create</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- <a href="https://mms-it.com" id="link">MMS IT</a> -->
+
+
+    <script>
+
+        // const link = document.querySelector("#link");
+
+
+        // link.addEventListener("click",event => {
+        //     if(!confirm("are u sure to go MMS IT ?")){
+        //         event.preventDefault()
+        //     }
+        // })
+
+        const createForm = document.querySelector("#createForm");
+
+        // console.log(createForm);
+
+        createForm.addEventListener("submit",(event) => {
+            event.preventDefault();
+            // console.log("you submit");
+            const data = new FormData(createForm);
+
+            data.append("your_job","Developer")
+
+            console.log(data.get("your_name"));
+            console.log(data.get("your_email"));
+            console.log(data.get("date_of_birth"));
+            console.log(data.get("salary"));
+            console.log(data.get("your_job"));
+
+            createForm.reset();
+        })
+
+
+        const addition = (x,y) => {
+            const z = x + y;
+            console.log(z);
+            return z;
+        }
+
+        const run = () => {
+            console.log("this is run");
+        }
+
+        // const btn = document.querySelector("#btn");
+        // console.dir(btn);
+
+        // btn.onclick = run
+
+        // console.log(addition(4,5));
+
+        // btn.addEventListener("click",addition.bind(null,4,5))
+        // btn.addEventListener("click",addition.bind(null,5,6))
+
+        // btn.addEventListener("click",() => {
+        //     console.log("U Click");
+        // })
+
+        // btn.addEventListener("dblclick",() => {
+        //     console.log("Double Click");
+        // })
+
+        // btn.addEventListener("mouseenter",() => {
+        //     console.log("Mouser enter");
+        // })
+
+        // btn.addEventListener("mouseout",() => {
+        //     console.log("Mouser out");
+        // })
+
+        // const textInput = document.querySelector("#textInput");
+        // console.log(textInput);
+
+        // textInput.addEventListener("focus",() => {
+        //     console.log("Input Focus");
+        // })
+
+        // textInput.addEventListener("blur",() => {
+        //     console.log("Input blur");
+        // })
+
+        // textInput.addEventListener("keyup",() => {
+        //     console.log("Key Up");
+        // })
+
+        // textInput.addEventListener("keydown",() => {
+        //     console.log("Key Down");
+        // })
+
+        // textInput.addEventListener("change",() => {
+        //     console.log("on change");
+        // })
+
+        // textInput.addEventListener("keypress",() => {
+        //     console.log("Key Press");
+        // })
+
+
+        // const selectLang = document.querySelector("#selectLang");
+
+        // selectLang.addEventListener("change",() => {
+        //     console.log("on change",selectLang.value);
+        // })
+    </script>
+</body>
+</html>

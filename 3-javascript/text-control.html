@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tc{
+            display: flex;
+            padding: 15px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        #output{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset class="tc">
+        <legend>Text Control</legend>
+        <div class="">
+            <label for="">Text Input </label>
+            <input type="text" id="textInput">
+        </div>
+        <div class="">
+            <label for="">Text Color </label>
+            <input type="color" id="colorInput">
+        </div>
+        <div class="">
+            <label for="">Font Size </label>
+            <input type="range" min="16" value="16" max="100" id="sizeInput">
+        </div>
+        <div class="">
+            <label for="">Font Select </label>
+            <select name="" id="inputFont"></select>
+        </div>
+    </fieldset>
+
+    <h1 id="output"></h1>
+
+    <script>
+
+        // variables
+        const fonts = [
+            "Arial",
+            "Helvetica",
+            "Arial Black",
+            "Impact",
+            "Times New Roman",
+            "Verdana",
+            "Tahoma"
+        ];
+
+        // selector
+        const textInput = document.querySelector("#textInput");
+        const colorInput = document.querySelector("#colorInput");
+        const sizeInput = document.querySelector("#sizeInput");
+        const output = document.querySelector("#output");
+        const inputFont = document.querySelector("#inputFont");
+        
+        // functions
+
+        const createOption = (text,value) => {
+            const option = document.createElement("option");
+            option.innerText = text;
+            option.value = value;
+            return option;
+        }
+
+
+
+        // process
+
+        fonts.forEach(font => {
+            inputFont.append(new Option(font,font))
+        })
+
+        textInput.addEventListener("keyup",() => {
+            output.innerText = textInput.value
+        })
+
+        colorInput.addEventListener("change",() => {
+            output.style.color = colorInput.value
+        })
+
+        sizeInput.addEventListener("change",() => {
+            output.style.fontSize =  sizeInput.value + "px";
+        })
+
+        inputFont.addEventListener("change",() => {
+            output.style.fontFamily = inputFont.value
+        })
+
+
+    </script>
+    
+</body>
+</html>
