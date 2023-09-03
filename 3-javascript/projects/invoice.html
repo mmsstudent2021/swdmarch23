@@ -8,7 +8,7 @@
   </head>
   <body>
     <main id="app">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div class="col-12">
             <header class="mb-5 py-3">
@@ -16,7 +16,7 @@
               <h3 class="fw-bold text-black-50">Invoice App</h3>
             </header>
 
-            <form id="recordForm" action="">
+            <form id="recordForm" class="d-print-none" action="">
               <div class="row mb-5 align-items-end bg-secondary-subtle py-3">
                 <div class="col">
                   <label class="form-label" for="productSelect">
@@ -77,11 +77,49 @@
                 </tr>
               </tfoot>
             </table>
+            <p class=" d-none d-print-block">ဝယ်ယူအားပေးမူ့ကို ကျေးဇူးတင်ပါတယ်</p>
+            <div class="text-end d-print-none">
+              <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#myInventory" aria-controls="myInventory">
+                Inventory
+              </button>
+              <button id="printer" class=" btn btn-primary">
+                <i class=" bi bi-printer"></i>
+                Print
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      
+      
+      
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="myInventory" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
     </main>
 
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/invoice.js"></script>
   </body>
 </html>
