@@ -27,11 +27,7 @@
                     name="productSelect"
                     id="productSelect"
                     required
-                  >
-
-                
-                
-                </select>
+                  ></select>
                 </div>
                 <div class="col">
                   <label class="form-label" for="quantityInput">
@@ -68,22 +64,29 @@
                 <tr class="record-empty-row">
                   <td colspan="5" class="text-center">There is no record</td>
                 </tr>
-               
               </tbody>
               <tfoot>
                 <tr>
-                    <td colspan="4" class="text-center">Total Cost</td>
-                    <td class="text-end" id="totalCost">0</td>
+                  <td colspan="4" class="text-center">Total Cost</td>
+                  <td class="text-end" id="totalCost">0</td>
                 </tr>
               </tfoot>
             </table>
-            <p class=" d-none d-print-block">ဝယ်ယူအားပေးမူ့ကို ကျေးဇူးတင်ပါတယ်</p>
+            <p class="d-none d-print-block">
+              ဝယ်ယူအားပေးမူ့ကို ကျေးဇူးတင်ပါတယ်
+            </p>
             <div class="text-end d-print-none">
-              <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#myInventory" aria-controls="myInventory">
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#myInventory"
+                aria-controls="myInventory"
+              >
                 Inventory
               </button>
-              <button id="printer" class=" btn btn-primary">
-                <i class=" bi bi-printer"></i>
+              <button id="printer" class="btn btn-primary">
+                <i class="bi bi-printer"></i>
                 Print
               </button>
             </div>
@@ -91,32 +94,49 @@
         </div>
       </div>
 
-      
-      
-      
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="myInventory" aria-labelledby="offcanvasExampleLabel">
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="myInventory"
+        aria-labelledby="offcanvasExampleLabel"
+      >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <div class="offcanvas-title" id="offcanvasExampleLabel">
+            <h1 class="fw-bold">Manage Inventory</h1>
+            <h3 class="fw-bold text-black-50">Available Items</h3>
+          </div>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-          </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+          <ul class="list-group mb-3" id="itemLists"></ul>
+          <form id="newItemForm" class="bg-secondary-subtle p-3">
+            <div class="mb-3">
+              <label class=" form-label">New Item Name</label>
+              <input type="text" class="form-control" name="new_item_name" required />
+            </div>
+            <div class="row g-3">
+              <div class="col-8">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="new_item_price"
+                  placeholder="Price"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <button class="btn btn-primary d-block w-100">Add New</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-
-      
     </main>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
