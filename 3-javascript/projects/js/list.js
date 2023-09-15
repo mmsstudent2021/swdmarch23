@@ -133,10 +133,7 @@ const createList = (listText) => {
   return list;
 };
 
-// Processes
-
-countList();
-addBtn.addEventListener("click", () => {
+const handleNewList = () => {
   const list = createList(textInput.value);
   lists.append(list);
   list
@@ -149,6 +146,17 @@ addBtn.addEventListener("click", () => {
     });
   countList();
   textInput.value = null;
+}
+
+// Processes
+
+countList();
+addBtn.addEventListener("click", handleNewList);
+
+textInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    handleNewList()
+  }
 });
 
 // const obj = {

@@ -63,6 +63,18 @@ const bd = document.getElementById("bd");
 const photo = document.getElementById("photo");
 
 
+// document.addEventListener("click",(event) => {
+//     console.log(event);
+// })
+
+userInput.addEventListener("keyup",(event) => {
+    if(event.key === "Enter"){
+        console.log(event.target.value);
+        event.target.value = null
+    }
+})
+
+
 
 
 // functions

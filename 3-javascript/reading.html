@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:active{
+            background-color: gray;
+        }
+    </style>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+
+    <h1>San Kyi Tar</h1>
+
+    <p>
+        hein
+        htet
+        zan
+    </p>
+
+    <button><i class=" bi bi-person"></i>Users</button>
+
+    <ul>
+        <li>apple</li>
+        <li>orange</li>
+        <li>mango</li>
+        <li>
+            banana
+            <span>Example</span>
+        </li>
+    </ul>
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident culpa ratione soluta earum temporibus fuga dicta tempora, voluptate consequatur, repellat obcaecati aliquam hic ipsum asperiores doloribus ipsam animi repudiandae numquam.
+    </p>
+
+    <script>
+
+        const frg = document.createDocumentFragment();
+        const p = document.createElement("p");
+        p.innerText = "san kyi tar"
+
+        const p1 = document.createElement("p");
+        p1.innerText = "san kyi tar 1"
+
+        const p2 = document.createElement("p");
+        p2.innerText = "san kyi tar 2"
+
+        const t = document.createTextNode("haha");
+
+        frg.append(p);
+        frg.append(p1);
+        frg.append(p2);
+        frg.append(t)
+
+        // console.log(frg);
+
+        document.body.append(frg)
+
+        // const btn = document.querySelector("button");
+        // btn.innerHTML = `<i class="bi bi-bag"></i> Bags`;
+        // console.log(btn.childNodes);
+        // btn.childNodes[1].nodeValue = "Bag"
+
+        // console.log(btn.childNodes);
+
+        // const text = document.createTextNode("hello");
+        // document.body.append(text)
+
+
+        // const span = document.querySelector("span");
+
+        // console.log(span.closest("ul"));
+
+        // const ul = document.querySelector("ul");
+
+        // console.log(ul.childNodes);
+
+        const h1 = document.querySelector("h1");
+        // const button = document.querySelector("button");
+
+        h1.addEventListener("click",(event) => {
+            console.log(event);
+            console.log("U click h1");
+        })
+
+
+        // button.addEventListener("click",() => {
+        //     h1.click()
+        // })
+
+
+
+        // h1.contentEditable = true;
+        // h1.innerText = "hello"
+
+        console.dir(h1);
+
+        // h1.title = "MMS IT"
+
+
+    </script>
+    
+</body>
+</html>

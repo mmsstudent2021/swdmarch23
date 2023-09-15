@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #one,
+      #two {
+        border: 3px solid black;
+        padding: 50px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+
+    <ul>
+      <li>Apple</li>
+      <li>Orange</li>
+      <li>Mango</li>
+    </ul>
+
+    <script>
+      const input = document.querySelector("input");
+      const ul = document.querySelector("ul");
+      const lis = document.querySelectorAll("li");
+      console.log(lis);
+
+    //   lis.forEach((li) => {
+    //     li.addEventListener("click", () => {
+    //       console.log(li.innerText);
+    //     });
+    //   });
+
+        ul.addEventListener("click",(event) => {
+            console.log(event.target.innerText);
+        })
+
+      input.addEventListener("keyup", (event) => {
+        if (event.key === "Enter") {
+          const newLi = document.createElement("li");
+          newLi.innerText = input.value;
+          ul.append(newLi)
+          input.value =null
+        }
+      });
+
+      // const ul = document.querySelector("ul")
+      // console.log(ul.children);
+
+      //   const one = document.querySelector("#one");
+      //   const two = document.querySelector("#two");
+      //   const three = document.querySelector("#three");
+
+      //   const events = ["click","mouseenter","mouseout"];
+
+      //   events.forEach(el => {
+      //     three.addEventListener(el,(e) => {
+      //         console.log(e);
+      //     })
+      //   })
+
+      //   two.addEventListener("click", () => {
+      //     console.log("U click two");
+      //   },false);
+
+      //   three.addEventListener("click", (event) => {
+      //     event.stopPropagation()
+      //     console.log("U click three");
+      //   },false);
+
+      //   one.addEventListener("click", () => {
+      //     console.log("U click one");
+      //   },false);
+
+      //   let counter = 1;
+      //   const title = document.querySelector("#title");
+
+      //   const handleChangeBtn = () => {
+      //     console.log("change title");
+      //     title.innerText = "San Kyi Tar";
+      //     counter++;
+      //     counter === 5 && changeBtn.removeEventListener("click",handleChangeBtn)
+      //   }
+
+      //   changeBtn.addEventListener("click", handleChangeBtn);
+    </script>
+  </body>
+</html>
