@@ -48,13 +48,13 @@ const newItemForm = app.querySelector("#newItemForm");
 
 // functions
 
-const createItem = (product) => {
+const createItem = ({name,price}) => {
   const li = document.createElement("li");
   li.classList.add("list-group-item");
   li.innerHTML = `
   <div class="d-flex justify-content-between">
-    <p class=" mb-0">${product.name}</p>
-    <p class=" mb-0 text-black-50"><span>${product.price}</span> MMK</p>
+    <p class=" mb-0">${name}</p>
+    <p class=" mb-0 text-black-50"><span>${price}</span> MMK</p>
   </div>
   
   `;
@@ -136,15 +136,15 @@ const addNewRecord = (product, quantity) => {
   records.append(createRecordRow(product, quantity));
 };
 
-const updateExistedRecord = (product, quantity) => {
-  const row = document.querySelector(`[row-product-id='${product.id}']`);
+const updateExistedRecord = ({id,price}, quantity) => {
+  const row = document.querySelector(`[row-product-id='${id}']`);
   const currentRowQuantity = row.querySelector(".row-quantity");
   const currentRowCost = row.querySelector(".row-cost");
 
   currentRowQuantity.innerText =
     parseFloat(currentRowQuantity.innerText) + parseFloat(quantity);
 
-  currentRowCost.innerText = currentRowQuantity.innerText * product.price;
+  currentRowCost.innerText = currentRowQuantity.innerText * price;
 
   costTotal();
 };
@@ -191,9 +191,9 @@ const handleNewItem = (event) => {
 
 // process
 
-products.forEach((product) => {
-  productSelect.append(new Option(product.name, product.id));
-  itemLists.append(createItem(product));
+products.forEach(({id,name,price}) => {
+  productSelect.append(new Option(name, id));
+  itemLists.append(createItem({id,name,price}));
 });
 
 recordForm.addEventListener("submit", handleRecordFrom);
