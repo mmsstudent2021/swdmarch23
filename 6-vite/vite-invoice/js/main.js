@@ -1,4 +1,5 @@
 import "../scss/app.scss";
+import * as bootstrap from "bootstrap";
 import Invoice from "./Invoice";
 
 
