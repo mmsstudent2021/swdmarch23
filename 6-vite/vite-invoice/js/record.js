@@ -1,4 +1,6 @@
-import { totalCost } from "./app/selectors";
+import Swal from "sweetalert2";
+import Toastify from 'toastify-js'
+import { records, totalCost } from "./app/selectors";
 
 export const createRecord = (product, quantity) => {
   const tr = document.createElement("tr");
@@ -25,10 +27,49 @@ export const createRecord = (product, quantity) => {
       `;
 
   const deleteRecord = () => {
-    if (confirm("Are U sure to delete ?")) {
-      tr.remove();
-      calculateRecordCostTotal();
-    }
+    Swal.fire({
+      title: "Are U sure?",
+      text: "It can't restore after delete",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#333",
+      cancelButtonColor: "gray",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        tr.remove()
+
+        Toastify({
+
+          text: 'Record deleted.',
+          
+          duration: 3000
+          
+          }).showToast();
+
+        // const Toast = Swal.mixin({
+        //   toast: true,
+        //   position: 'bottom-start',
+        //   showConfirmButton: false,
+        //   timer: 3000,
+        //   timerProgressBar: true,
+        //   didOpen: (toast) => {
+        //     toast.addEventListener('mouseenter', Swal.stopTimer)
+        //     toast.addEventListener('mouseleave', Swal.resumeTimer)
+        //   }
+        // })
+        
+        // Toast.fire({
+        //   icon: 'success',
+        //   title: 'Record deleted.'
+        // })
+        
+      }
+    })
+
+    // if (confirm("Are U sure to delete ?")) {
+    //   tr.remove();
+    // }
   };
 
   const rowDelete = tr.querySelector(".row-delete");
@@ -62,8 +103,6 @@ export const updateRecord = ({ id, price }, quantity) => {
     parseFloat(currentRowQuantity.innerText) + parseFloat(quantity);
 
   currentRowCost.innerText = currentRowQuantity.innerText * price;
-
-  calculateRecordCostTotal();
 };
 
 export const calculateRecordCostTotal = () => {
@@ -71,4 +110,18 @@ export const calculateRecordCostTotal = () => {
     (pv, cv) => pv + parseFloat(cv.innerText),
     0
   );
+};
+
+export const recordObserver = () => {
+  console.log("Record Observer Working");
+
+  const observerOptions = {
+    childList: true,
+    subtree: true,
+  };
+
+  const observer = new MutationObserver(() => {
+    calculateRecordCostTotal();
+  });
+  observer.observe(records, observerOptions);
 };
