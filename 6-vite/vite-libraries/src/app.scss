@@ -1,8 +1,31 @@
 @import url("../node_modules/bootstrap/scss/bootstrap.scss");
+@import url("../node_modules/venobox/dist/venobox.min.css");
+@import url("../node_modules/animate.css/animate.min.css");
+@import url("../node_modules/aos/dist/aos.css");
 
 .slide-img{
     width: 100%;
     height: 300px;
     object-fit: cover;
     object-position: center;
+}
+
+.gallery-img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.side-img{
+    position: fixed;
+    top: 100px;
+    z-index: 1010;
+    transform: translateX(-90%) rotate(10deg);
+    transition: 300ms;
+}
+
+.side-img.active{
+    transform: translateX(0) rotate(0deg);
+
 }

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Rubik:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.category-badge{
+    @apply border border-neutral-700 text-neutral-700 py-1 px-3;
+}
+
+.category-badge.active{
+    @apply bg-neutral-700 text-white;
+}
+
+.product-card {
+
+}
+
+.product-card .product-img{
+    @apply duration-500 transition-transform;
+}
+
+.product-card:hover .product-img{
+    @apply -rotate-6 ;
+}
