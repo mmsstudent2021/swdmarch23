@@ -1,8 +1,20 @@
-import { cartItems, cartUi, productSection } from "../core/selectors";
+import {
+  cartBtnCount,
+  cartCount,
+  cartItems,
+  cartTotalAmount,
+  cartUi,
+  productSection,
+} from "../core/selectors";
 import { products } from "../core/variables";
-import { createCartUi } from "./cart";
+import {
+  calculateCartAmountTotal,
+  calculateCartCount,
+  createCartUi,
+} from "./cart";
 
 export const productRender = (list) => {
+  productSection.innerHTML = ""
   list.forEach((el) => productSection.append(createProductCard(el)));
 };
 
@@ -42,6 +54,9 @@ export const createProductCard = ({
   rating: { count, rate },
 }) => {
   const card = document.createElement("div");
+  const isCartItem = cartItems.querySelector(`[product-id='${id}']`);
+
+
   card.classList.add("product-card");
   card.setAttribute("data-id", id);
   card.innerHTML = `
@@ -70,8 +85,8 @@ export const createProductCard = ({
         <p class="font-bold mb-2 font-heading text-xl">
         $ <span>${price}</span>
         </p>
-        <button class="add-to-cart-btn border w-full block border-neutral-700 p-3">
-        Add to Cart
+        <button ${isCartItem && 'disabled'} class="add-to-cart-btn font-heading border w-full block border-neutral-700 p-3 ${isCartItem && 'bg-neutral-700 text-white'}">
+        ${isCartItem ? 'Added' : 'Add to Cart'}
         </button>
     </div>
     </div>
@@ -85,8 +100,16 @@ export const createProductCard = ({
 };
 
 const addToCartBtnHandler = (event) => {
-  const currentId = event.target.closest(".product-card").getAttribute("data-id");
-  const currentProduct = products.find(el => el.id == currentId);
-  console.log(currentProduct);
+  const btn = event.target;
+  const currentId = event.target
+    .closest(".product-card")
+    .getAttribute("data-id");
+
+    btn.innerText = "Added";
+    btn.toggleAttribute("disabled");
+    btn.classList.add("bg-neutral-700","text-white");
+
+  const currentProduct = products.find((el) => el.id == currentId);
   cartItems.append(createCartUi(currentProduct));
+  
 };

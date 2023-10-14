@@ -1,29 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Rubik:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Rubik:wght@400;600;700&display=swap");
+
+@import url("../node_modules/sweetalert2/dist/sweetalert2.min.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-.category-badge{
-    @apply border border-neutral-700 text-neutral-700 py-1 px-3;
+.swal2-confirm {
+  @apply bg-neutral-700 !important;
 }
 
-.category-badge.active{
-    @apply bg-neutral-700 text-white;
+.swal2-cancel {
+  @apply bg-neutral-100  !important;
+  @apply text-neutral-700 !important;
+}
+
+.swal2-title{
+    @apply font-heading;
+}
+
+.category-badge {
+  @apply capitalize border border-neutral-700 text-neutral-700 py-1 px-3;
+}
+
+.category-badge.active {
+  @apply bg-neutral-700 text-white;
 }
 
 .product-card {
-
 }
 
-.product-card .product-img{
-    @apply duration-500 transition-transform;
+.product-card .product-img {
+  @apply duration-500 transition-transform;
 }
 
-.product-card:hover .product-img{
-    @apply -rotate-6 ;
+.product-card:hover .product-img {
+  @apply -rotate-6;
 }

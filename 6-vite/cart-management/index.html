@@ -34,7 +34,7 @@
           </button>
           <button
             id="cartBtn"
-            class="border border-neutral-700 bg-neutral-700 p-3"
+            class="border border-neutral-700 bg-neutral-700 p-3 relative"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +50,7 @@
                 d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
               />
             </svg>
+            <span class="bg-red-500 border-2 border-white text-[9px] text-white px-1 w-6 h-6 text-center flex justify-center items-center rounded-full translate-x-1/2 -translate-y-1/2 absolute top-0 right-0" id="cartBtnCount">0</span>
           </button>
         </div>
       </header>
@@ -65,7 +66,7 @@
 
         <section
           id="cartUi"
-          class="w-[380px] duration-200 translate-x-0 h-screen bg-white fixed right-0 top-0 z-50 border-neutral-700 border-s-2"
+          class="w-[380px]  translate-x-full h-screen bg-white fixed right-0 top-0 z-50 border-neutral-700 border-s-2"
         >
           <div class="h-full flex flex-col">
             <div
@@ -73,7 +74,9 @@
             >
               <div class="">
                 <h3 class="font-bold text-2xl">Shopping Cart</h3>
-                <p class="text-neutral-400">Your Items</p>
+                <p class="text-neutral-400">
+                  Your Items Count <span class="bg-red-500 text-white text-sm px-2 py-1 rounded " id="cartCount">0</span>
+                </p>
               </div>
 
               <button id="closeCart" class="border border-neutral-700 p-3">
@@ -100,8 +103,6 @@
                 <img class="w-3/4" src="./public/img/empty-cart.svg" alt="" />
                 <p>There is no item yet !</p>
               </div>
-
-              
             </div>
 
             <div
@@ -109,7 +110,7 @@
             >
               <div class="mb-3 text-end">
                 <p class="text-neutral-400">Total Amount</p>
-                <p class="text-3xl">$ <span>1325.45</span></p>
+                <p class="text-3xl">$ <span id="cartTotalAmount">0</span></p>
               </div>
               <button class="block w-full bg-neutral-700 text-white py-3">
                 Order Now

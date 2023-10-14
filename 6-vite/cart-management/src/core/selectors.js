@@ -6,3 +6,6 @@ export const productSection = app.querySelector("#productSection");
 export const cartUi = app.querySelector("#cartUi");
 export const closeCart = app.querySelector("#closeCart");
 export const cartItems = app.querySelector("#cartItems");
+export const cartTotalAmount = app.querySelector("#cartTotalAmount");
+export const cartCount = app.querySelector("#cartCount");
+export const cartBtnCount = app.querySelector("#cartBtnCount");
