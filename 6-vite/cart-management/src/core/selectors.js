@@ -9,3 +9,4 @@ export const cartItems = app.querySelector("#cartItems");
 export const cartTotalAmount = app.querySelector("#cartTotalAmount");
 export const cartCount = app.querySelector("#cartCount");
 export const cartBtnCount = app.querySelector("#cartBtnCount");
+export const orderNow = app.querySelector("#orderNow");

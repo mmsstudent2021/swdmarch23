@@ -1,4 +1,5 @@
 import {
+  cartBtn,
   cartBtnCount,
   cartCount,
   cartItems,
@@ -14,7 +15,7 @@ import {
 } from "./cart";
 
 export const productRender = (list) => {
-  productSection.innerHTML = ""
+  productSection.innerHTML = "";
   list.forEach((el) => productSection.append(createProductCard(el)));
 };
 
@@ -56,7 +57,6 @@ export const createProductCard = ({
   const card = document.createElement("div");
   const isCartItem = cartItems.querySelector(`[product-id='${id}']`);
 
-
   card.classList.add("product-card");
   card.setAttribute("data-id", id);
   card.innerHTML = `
@@ -85,8 +85,12 @@ export const createProductCard = ({
         <p class="font-bold mb-2 font-heading text-xl">
         $ <span>${price}</span>
         </p>
-        <button ${isCartItem && 'disabled'} class="add-to-cart-btn font-heading border w-full block border-neutral-700 p-3 ${isCartItem && 'bg-neutral-700 text-white'}">
-        ${isCartItem ? 'Added' : 'Add to Cart'}
+        <button ${
+          isCartItem && "disabled"
+        } class="add-to-cart-btn font-heading border w-full block border-neutral-700 p-3 ${
+    isCartItem && "bg-neutral-700 text-white"
+  }">
+        ${isCartItem ? "Added" : "Add to Cart"}
         </button>
     </div>
     </div>
@@ -99,17 +103,72 @@ export const createProductCard = ({
   return card;
 };
 
+export const setCartAddedBtn = (productId) => {
+  const btn = app.querySelector(`[data-id='${productId}'] .add-to-cart-btn`);
+
+  btn.innerText = "Added";
+  btn.toggleAttribute("disabled");
+  btn.classList.add("bg-neutral-700", "text-white");
+};
+
+export const removeCartAddedBtn = (productId) => {
+  const btn = app.querySelector(`[data-id='${productId}'] .add-to-cart-btn`);
+  btn.innerText = "Add to Cart";
+  btn.toggleAttribute("disabled");
+  btn.classList.remove("bg-neutral-700", "text-white");
+};
+
 const addToCartBtnHandler = (event) => {
   const btn = event.target;
-  const currentId = event.target
-    .closest(".product-card")
-    .getAttribute("data-id");
+  const currentCart = event.target.closest(".product-card");
+  const currentCartImg = currentCart.querySelector("img");
+  const currentId = currentCart.getAttribute("data-id");
 
-    btn.innerText = "Added";
-    btn.toggleAttribute("disabled");
-    btn.classList.add("bg-neutral-700","text-white");
+  setCartAddedBtn(currentId);
 
   const currentProduct = products.find((el) => el.id == currentId);
   cartItems.append(createCartUi(currentProduct));
-  
+
+  const img = currentCartImg.getBoundingClientRect();
+  const cart = cartBtn.querySelector("svg").getBoundingClientRect();
+
+  const animation = [
+    {
+      top: img.top + "px",
+      left: img.left + "px",
+      width: img.width + "px",
+      rotate: 0 + "deg",
+    },
+    {
+      top: cart.top + "px",
+      left: cart.left + "px",
+      width: 0,
+      rotate: 360 + "deg",
+    },
+  ];
+
+  const timing = {
+    duration: 500,
+    iterations: 1,
+  };
+
+  const newImg = new Image(img.width);
+  newImg.src = currentCartImg.src;
+  newImg.style.position = "fixed";
+  newImg.style.zIndex = 51;
+  newImg.style.top = img.top + "px";
+  newImg.style.left = img.left + "px";
+  // newImg.style.filter = "grayscale(100%)"
+
+  document.body.append(newImg);
+
+  setTimeout(() => {
+    cartBtn.classList.add("animate__tada");
+    cartBtn.addEventListener("animationend", () => {
+      cartBtn.classList.remove("animate__tada");
+    });
+    newImg.remove();
+  }, 500);
+
+  newImg.animate(animation, timing);
 };

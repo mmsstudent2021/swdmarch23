@@ -6,6 +6,7 @@ import {
   cartItems,
   cartTotalAmount,
 } from "../core/selectors";
+import { removeCartAddedBtn } from "./product";
 
 export const createCartUi = ({ id, image, price, title }) => {
   const cart = document.createElement("div");
@@ -30,11 +31,12 @@ export const createCartUi = ({ id, image, price, title }) => {
 
        
         <div class="flex justify-between">
-            <p class="text-neutral-500">$ <span class='cart-cost'>${price}</span></p>
+            <p class='hidden'>Price : $ <span class='original-price'>${price}</span></p>
+            <p class="text-neutral-500"> $ <span class='cart-cost'>${price}</span></p>
             <div
             class="flex justify-between items-center w-[120px] bg-neutral-100"
             >
-            <button class="px-2 py-1 bg-neutral-300">
+            <button class="px-2 py-1 bg-neutral-300 cart-q-decrement ">
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -51,8 +53,10 @@ export const createCartUi = ({ id, image, price, title }) => {
                 </svg>
             </button>
 
-            <p class="flex-grow text-end pe-2">1</p>
-            <button class="px-2 py-1 bg-neutral-300">
+            <p class="flex-grow text-end pe-2 cart-q">1</p>
+
+
+            <button class="px-2 py-1 bg-neutral-300 cart-q-increment">
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -75,6 +79,13 @@ export const createCartUi = ({ id, image, price, title }) => {
     `;
   const cartRemoveBtn = cart.querySelector(".cart-remove-btn");
   cartRemoveBtn.addEventListener("click", cartRemoveBtnHandler);
+
+  const cartQuantityDecrement = cart.querySelector(".cart-q-decrement");
+  cartQuantityDecrement.addEventListener("click", cartQuantityDecrementHandler);
+
+  const cartQuantityIncrement = cart.querySelector(".cart-q-increment");
+  cartQuantityIncrement.addEventListener("click", cartQuantityIncrementHandler);
+
   return cart;
 };
 
@@ -88,27 +99,49 @@ export const cartRemoveBtnHandler = (event) => {
     showCancelButton: true,
     // confirmButtonColor: "rgb(64,64,64)",
     // cancelButtonColor: "rgb(245,245,245)",
-    cancelButtonText : "Cancel",
+    cancelButtonText: "Cancel",
     confirmButtonText: "Confirm",
   }).then((result) => {
     if (result.isConfirmed) {
-      currentCart.remove();
-
-      const btn = app.querySelector(
-        `[data-id='${productId}'] .add-to-cart-btn`
-      );
-
-
-      btn.innerText = "Add to Cart";
-      btn.toggleAttribute("disabled");
-      btn.classList.remove("bg-neutral-700", "text-white");
+      currentCart.classList.add("animate__animated", "animate__hinge");
+      currentCart.addEventListener("animationend", () => {
+        currentCart.remove();
+        removeCartAddedBtn(productId);
+      });
     }
   });
 };
 
+export const cartQuantityIncrementHandler = (event) => {
+  const currentCart = event.target.closest(".cart-item");
+  const currentQuantity = currentCart.querySelector(".cart-q");
+  const currentCartPrice = currentCart.querySelector(".original-price");
+  const currentCartCost = currentCart.querySelector(".cart-cost");
+
+  currentQuantity.innerText = parseInt(currentQuantity.innerText) + 1;
+
+  currentCartCost.innerText =
+    currentCartPrice.innerText * currentQuantity.innerText;
+};
+
+export const cartQuantityDecrementHandler = () => {
+  const currentCart = event.target.closest(".cart-item");
+  const currentQuantity = currentCart.querySelector(".cart-q");
+  const currentCartPrice = currentCart.querySelector(".original-price");
+  const currentCartCost = currentCart.querySelector(".cart-cost");
+
+  if (currentQuantity.innerText > 1) {
+    currentQuantity.innerText = parseInt(currentQuantity.innerText) - 1;
+    currentCartCost.innerText =
+      currentCartPrice.innerText * currentQuantity.innerText;
+  }
+};
+
 export const calculateCartAmountTotal = () => {
   const cartCost = app.querySelectorAll(".cart-cost");
-  return [...cartCost].reduce((pv, cv) => pv + parseFloat(cv.innerText), 0);
+  return [...cartCost]
+    .reduce((pv, cv) => pv + parseFloat(cv.innerText), 0)
+    .toFixed(2);
 };
 
 export const calculateCartCount = () => {

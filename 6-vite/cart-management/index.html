@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -8,7 +8,8 @@
   </head>
   <body>
     <main id="app">
-      <header
+      <header 
+      
         class="w-full fixed left-0 right-0 z-50 md:w-4/5 px-3 md:px-0 mx-auto py-4 flex justify-between border-b-2 bg-white border-neutral-700"
       >
         <div class="brand font-heading">
@@ -34,7 +35,7 @@
           </button>
           <button
             id="cartBtn"
-            class="border border-neutral-700 bg-neutral-700 p-3 relative"
+            class="border animate__animated border-neutral-700 bg-neutral-700 p-3 relative"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,11 +56,11 @@
         </div>
       </header>
 
-      <div class="h-28"></div>
+      <div id="headerSpacer" class="h-28"></div>
       <div class="w-full md:w-4/5 mx-auto px-3 md:px-0">
         <section class="mb-10">
           <p class="mb-2 text-lg text-neutral-700">Product Categories</p>
-          <div id="categoryLists" class="flex gap-2">
+          <div id="categoryLists" class="flex justify-stretch">
             <button class="category-badge active">All</button>
           </div>
         </section>
@@ -96,7 +97,7 @@
                 </svg>
               </button>
             </div>
-            <div id="cartItems" class="cart-items flex-grow p-4">
+            <div id="cartItems" class="cart-items h-auto overflow-scroll flex-grow p-4">
               <div
                 class="h-full hidden last:flex flex-col justify-center items-center"
               >
@@ -112,7 +113,7 @@
                 <p class="text-neutral-400">Total Amount</p>
                 <p class="text-3xl">$ <span id="cartTotalAmount">0</span></p>
               </div>
-              <button class="block w-full bg-neutral-700 text-white py-3">
+              <button id="orderNow" class="block w-full bg-neutral-700 text-white py-3">
                 Order Now
               </button>
             </div>
@@ -131,7 +132,7 @@
             Copyright &copy; 2023
             <a class="underline" href="https://mms-it.com">MMS IT</a>
           </p>
-          <button class="border border-white p-2">
+          <a href="#headerSpacer" id="scrollToTop" class="border border-white p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -146,10 +147,11 @@
                 d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
               />
             </svg>
-          </button>
+          </a>
         </footer>
       </div>
     </main>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
