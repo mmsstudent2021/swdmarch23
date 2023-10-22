@@ -8,7 +8,7 @@ export const categoryRender = (list) => {
 
 export const createCategoryUi = (categoryName) => {
   const btn = document.createElement("button");
-  btn.classList.add("category-badge");
+  btn.classList.add("category-badge","whitespace-nowrap");
   btn.innerText = categoryName;
 
 

@@ -131,23 +131,50 @@ const addToCartBtnHandler = (event) => {
 
   const img = currentCartImg.getBoundingClientRect();
   const cart = cartBtn.querySelector("svg").getBoundingClientRect();
+  const cartItemRect = cartItems.getBoundingClientRect();
 
-  const animation = [
-    {
-      top: img.top + "px",
-      left: img.left + "px",
-      width: img.width + "px",
-      rotate: 0 + "deg",
-    },
-    {
-      top: cart.top + "px",
-      left: cart.left + "px",
-      width: 0,
-      rotate: 360 + "deg",
-    },
-  ];
+  let effect;
 
-  const timing = {
+  if(cartUi.classList.contains("translate-x-full")){
+
+    effect = [
+      {
+        top: img.top + "px",
+        left: img.left + "px",
+        width: img.width + "px",
+        rotate: 0 + "deg",
+      },
+      {
+        top: cart.top + "px",
+        left: cart.left + "px",
+        width: 0,
+        rotate: 360 + "deg",
+      },
+    ];
+  
+
+  }else{
+
+    effect = [
+      {
+        top: img.top + "px",
+        left: img.left + "px",
+        width: img.width + "px",
+        rotate: 0 + "deg",
+      },
+      {
+        top: cartItemRect.top + 300 + "px",
+        left: cartItemRect.left + 200 + "px",
+        width: 0,
+        rotate: 360 + "deg",
+      },
+    ];
+  
+
+  }
+  
+
+  const timeline = {
     duration: 500,
     iterations: 1,
   };
@@ -161,14 +188,15 @@ const addToCartBtnHandler = (event) => {
   // newImg.style.filter = "grayscale(100%)"
 
   document.body.append(newImg);
+  
 
-  setTimeout(() => {
+  const newImgAnimation = newImg.animate(effect, timeline);
+
+  newImgAnimation.addEventListener("finish", () => {
     cartBtn.classList.add("animate__tada");
     cartBtn.addEventListener("animationend", () => {
       cartBtn.classList.remove("animate__tada");
     });
     newImg.remove();
-  }, 500);
-
-  newImg.animate(animation, timing);
+  });
 };

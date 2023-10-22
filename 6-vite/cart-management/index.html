@@ -2,14 +2,40 @@
 <html class="scroll-smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Cart Management</title>
+    <link rel="icon" href="./public/fav.webp" />
+
+    <meta name="title" content="SWD Cart Management" />
+    <meta name="description" content="JavaScript App for swd students" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mms-it.com" />
+    <meta property="og:title" content="SWD Cart Management" />
+    <meta property="og:description" content="JavaScript App for swd students" />
+    <meta
+      property="og:image"
+      content="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/a2/55/b2/st-james-quarter-is-a.jpg?w=500&h=400&s=1"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mms-it.com" />
+    <meta property="twitter:title" content="SWD Cart Management" />
+    <meta
+      property="twitter:description"
+      content="JavaScript App for swd students"
+    />
+    <meta
+      property="twitter:image"
+      content="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/a2/55/b2/st-james-quarter-is-a.jpg?w=500&h=400&s=1"
+    />
+
   </head>
   <body>
     <main id="app">
-      <header 
-      
+      <header
         class="w-full fixed left-0 right-0 z-50 md:w-4/5 px-3 md:px-0 mx-auto py-4 flex justify-between border-b-2 bg-white border-neutral-700"
       >
         <div class="brand font-heading">
@@ -51,7 +77,11 @@
                 d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
               />
             </svg>
-            <span class="bg-red-500 border-2 border-white text-[9px] text-white px-1 w-6 h-6 text-center flex justify-center items-center rounded-full translate-x-1/2 -translate-y-1/2 absolute top-0 right-0" id="cartBtnCount">0</span>
+            <span
+              class="bg-red-500 border-2 border-white text-[9px] text-white px-1 w-6 h-6 text-center flex justify-center items-center rounded-full translate-x-1/2 -translate-y-1/2 absolute top-0 right-0"
+              id="cartBtnCount"
+              >0</span
+            >
           </button>
         </div>
       </header>
@@ -60,14 +90,14 @@
       <div class="w-full md:w-4/5 mx-auto px-3 md:px-0">
         <section class="mb-10">
           <p class="mb-2 text-lg text-neutral-700">Product Categories</p>
-          <div id="categoryLists" class="flex justify-stretch">
-            <button class="category-badge active">All</button>
+          <div id="categoryLists" class="flex max-w-full overflow-scroll gap-3 justify-stretch">
+            <button class="category-badge  active">All</button>
           </div>
         </section>
 
         <section
           id="cartUi"
-          class="w-[380px]  translate-x-full h-screen bg-white fixed right-0 top-0 z-50 border-neutral-700 border-s-2"
+          class="w-[380px] translate-x-full h-screen bg-white fixed right-0 top-0 z-50 border-neutral-700 border-s-2"
         >
           <div class="h-full flex flex-col">
             <div
@@ -76,7 +106,12 @@
               <div class="">
                 <h3 class="font-bold text-2xl">Shopping Cart</h3>
                 <p class="text-neutral-400">
-                  Your Items Count <span class="bg-red-500 text-white text-sm px-2 py-1 rounded " id="cartCount">0</span>
+                  Your Items Count
+                  <span
+                    class="bg-red-500 text-white text-sm px-2 py-1 rounded"
+                    id="cartCount"
+                    >0</span
+                  >
                 </p>
               </div>
 
@@ -97,7 +132,10 @@
                 </svg>
               </button>
             </div>
-            <div id="cartItems" class="cart-items h-auto overflow-scroll flex-grow p-4">
+            <div
+              id="cartItems"
+              class="cart-items h-auto overflow-scroll flex-grow p-4"
+            >
               <div
                 class="h-full hidden last:flex flex-col justify-center items-center"
               >
@@ -113,7 +151,10 @@
                 <p class="text-neutral-400">Total Amount</p>
                 <p class="text-3xl">$ <span id="cartTotalAmount">0</span></p>
               </div>
-              <button id="orderNow" class="block w-full bg-neutral-700 text-white py-3">
+              <button
+                id="orderNow"
+                class="block w-full bg-neutral-700 text-white py-3"
+              >
                 Order Now
               </button>
             </div>
@@ -132,7 +173,11 @@
             Copyright &copy; 2023
             <a class="underline" href="https://mms-it.com">MMS IT</a>
           </p>
-          <a href="#headerSpacer" id="scrollToTop" class="border border-white p-2">
+          <a
+            href="#headerSpacer"
+            id="scrollToTop"
+            class="border border-white p-2"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

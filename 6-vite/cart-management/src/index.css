@@ -22,11 +22,11 @@
 }
 
 .category-badge {
-  @apply block basis-1/5 capitalize border-b border-neutral-700 text-neutral-700 py-1 px-3 duration-150;
+  @apply block capitalize border border-neutral-700 text-neutral-700 py-1 px-3 duration-150;
 }
 
 .category-badge.active {
-  @apply border border-b-0 ;
+  @apply bg-neutral-700 text-neutral-300 ;
 }
 
 .product-card {
