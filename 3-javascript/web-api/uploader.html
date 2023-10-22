@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Uploader</title>
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+  <body>
+    <div class="p-5">
+      <h1 class="font-serif font-bold text-3xl mb-5">Click to Upload</h1>
+      <div
+        id="uploaderUi"
+        class="border-2 p-5 mb-5 flex gap-x-3 overflow-scroll rounded-lg border-sky-500 border-dashed min-h-[150px]"
+      >
+        <div
+          class="hidden group last:flex w-full h-[150px] flex-col justify-center select-none cursor-pointer items-center text-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-14 stroke-1 h-14 mb-3 fill-sky-100 stroke-sky-400 duration-150 group-hover:scale-75 group-active:scale-125"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15"
+            />
+          </svg>
+
+          <p class="text-sky-400">Click to select photo</p>
+        </div>
+      </div>
+      <button
+        class="bg-sky-500 text-sky-100 px-4 py-2 rounded-lg"
+        form="photoUploaderForm"
+      >
+        Upload Now
+      </button>
+    </div>
+    <form
+      action="http://localhost:8080/server.php"
+      method="post"
+      enctype="multipart/form-data"
+      id="photoUploaderForm"
+      class="hidden"
+    >
+      <input
+        type="file"
+        id="photos"
+        multiple
+        accept="image/jpeg,image/png"
+        name="photos[]"
+        required
+      />
+    </form>
+
+    <script src="./src/js/uploader.js"></script>
+  </body>
+</html>

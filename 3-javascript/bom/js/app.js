@@ -1,12 +1,12 @@
-console.log(window);
+// console.log(window);
 // console.log(window.innerHeight);
 // console.log(window.innerWidth);
 // console.log(outerHeight);
 // console.log(outerWidth);
 
-window.addEventListener("scroll",() => {
-    console.log(scrollY);
-})
+// window.addEventListener("scroll",() => {
+//     console.log(scrollY);
+// })
 
 // window.addEventListener("load",() => {
 //     console.log("window loaded");
@@ -39,10 +39,10 @@ window.addEventListener("scroll",() => {
 
 // setInterval(showClock, 1000);
 
-const clock = document.querySelector("#clock");
-const stopBtn = document.querySelector("#stop");
-const scrollBtn = document.querySelector("#scrollBtn");
-const here = document.querySelector("#here");
+// const clock = document.querySelector("#clock");
+// const stopBtn = document.querySelector("#stop");
+// const scrollBtn = document.querySelector("#scrollBtn");
+// const here = document.querySelector("#here");
 
 // const showClock = () => {
 //   const d = new Date();
@@ -55,6 +55,21 @@ const here = document.querySelector("#here");
 //     clearInterval(clockRunner)
 // })
 
-scrollBtn.addEventListener("click",() => {
-    scrollTo(0,here.getBoundingClientRect().y)
-})
+// scrollBtn.addEventListener("click",() => {
+//     scrollTo(0,here.getBoundingClientRect().y)
+// })
+
+// console.log(screen);
+// console.log(location);
+
+// navigator.geolocation.getCurrentPosition((pos) => {
+//     console.log(pos);
+//     console.log(pos.coords.latitude);
+//     console.log(pos.coords.longitude);
+// });
+
+// console.log(navigator.userAgent);
+
+// navigator.getBattery().then((battery) => {
+//     console.log(battery);
+// })
