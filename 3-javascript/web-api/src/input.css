@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.btn.play{
+    @apply scale-90 bg-blue-200;
+}

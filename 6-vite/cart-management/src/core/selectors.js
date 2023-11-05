@@ -10,3 +10,7 @@ export const cartTotalAmount = app.querySelector("#cartTotalAmount");
 export const cartCount = app.querySelector("#cartCount");
 export const cartBtnCount = app.querySelector("#cartBtnCount");
 export const orderNow = app.querySelector("#orderNow");
+
+
+export const speechSynthesis = window.speechSynthesis;
+export const utterance = new SpeechSynthesisUtterance();

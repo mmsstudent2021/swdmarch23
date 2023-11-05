@@ -5,6 +5,8 @@ import {
   cartCount,
   cartItems,
   cartTotalAmount,
+  speechSynthesis,
+  utterance,
 } from "../core/selectors";
 import { removeCartAddedBtn } from "./product";
 
@@ -157,6 +159,9 @@ export const cartObserver = () => {
   const observer = new MutationObserver(() => {
     cartTotalAmount.innerText = calculateCartAmountTotal();
     cartCount.innerText = cartBtnCount.innerText = calculateCartCount();
+    utterance.text = "Your cost total is " + cartTotalAmount.innerText;
+
+    speechSynthesis.speak(utterance);
   });
   observer.observe(cartItems, observerOptions);
 };
