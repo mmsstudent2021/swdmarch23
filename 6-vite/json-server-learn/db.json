@@ -1,55 +1,65 @@
 {
-    "students" : [
-        {
-            "id" : 1,
-            "name" : "kyaw kyaw",
-            "major" : "SWD"
-        },
-        {
-            "id" : 2,
-            "name" : "Su Su",
-            "major" : "SWD"
-        },
-        {
-            "id" : 3,
-            "name" : "Zaw Zaw",
-            "major" : "WAD"
-        },
-        {
-            "id" : 4,
-            "name" : "Hla Hla",
-            "major" : "PUD"
-        }
-    ],
-    "courses" : [
-        {
-            "id" : 1,
-            "title" : "Special Web Design",
-            "short_name" : "SWD"
-        },
-        {
-            "id" : 2,
-            "title" : "Web Application Development",
-            "short_name" : "WAD"
-        },
-        {
-            "id" : 3,
-            "title" : "Premium UI Design",
-            "short_name" : "PUD"
-        }
-    ],
-    "teachers" : [
-        {
-            "id":1,
-            "name" : "Hein Htet Zan"
-        },
-        {
-            "id":2,
-            "name" : "Poe Lay"
-        },
-        {
-            "id":3,
-            "name" : "Aung Aung"
-        }
-    ]
+  "students": [
+    {
+      "id": 1,
+      "name": "kyaw kyaw",
+      "major": "SWD"
+    },
+    {
+      "id": 2,
+      "name": "Su Su",
+      "major": "SWD"
+    },
+    {
+      "name": "Kuang Kuang",
+      "major": "SWD",
+      "id": 3
+    },
+    {
+      "name": "myo myo",
+      "major": "SWD",
+      "id": 5
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Special Web Design",
+      "short_name": "SWD"
+    },
+    {
+      "id": 2,
+      "title": "Web Application Development",
+      "short_name": "WAD"
+    },
+    {
+      "id": 3,
+      "title": "Premium UI Design",
+      "short_name": "PUD"
+    },
+    {
+      "title": "Web Dev Foundation",
+      "short_name": "WDF",
+      "id": 4
+    },
+    {
+      "title": "Figma Introduction",
+      "short_name": "FGI",
+      "id": 5
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Hein Htet Zan"
+    },
+    {
+      "id": 2,
+      "name": "Poe Lay"
+    },
+    {
+      "name": "Kuang Kuang",
+      "id": 3
+    }
+  ]
 }

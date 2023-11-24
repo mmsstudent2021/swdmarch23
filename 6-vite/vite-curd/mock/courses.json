@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Special Web Design",
+    "short_name": "SWD"
+  },
+  {
+    "id": 2,
+    "title": "Web Application Development",
+    "short_name": "WAD"
+  },
+  {
+    "id": 3,
+    "title": "Premium UI Design",
+    "short_name": "PUD"
+  },
+  {
+    "title": "Web Dev Foundation",
+    "short_name": "WDF",
+    "id": 4
+  },
+  {
+    "title": "Figma Introduction",
+    "short_name": "FGI",
+    "id": 5
+  }
+]
