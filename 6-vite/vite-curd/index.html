@@ -13,6 +13,45 @@
           <h1 class="text-3xl font-serif font-bold">Manage Courses</h1>
         </header>
         <section>
+          <div class="flex justify-between items-center mb-6">
+            <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                type="button"
+                data-drawer-target="drawer-right-example"
+                data-drawer-show="drawer-right-example"
+                data-drawer-placement="right"
+                aria-controls="drawer-right-example"
+              >
+                Add Course
+              </button>
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+              >
+              
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="searchInput"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search Course"
+              />
+            </div>
+          </div>
           <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-5">
             <table
               class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
@@ -29,108 +68,121 @@
                 </tr>
               </thead>
               <tbody id="recordGroup">
-                <tr class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <tr
+                  class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                >
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                </tr>
-                <tr class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="flex gap-2 justify-end">
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                    </div>
                   </td>
                 </tr>
-                <tr class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <tr
+                  class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                >
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                </tr>
-                <tr class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
-                  </td>
-                  <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="flex gap-2 justify-end">
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                    </div>
                   </td>
                 </tr>
-                <tr class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <tr
+                  class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                >
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
                   </td>
                   <td class="px-6 py-4">
-                    <div class="h-5 bg-slate-300 rounded"></div>
+                    <div class="flex gap-2 justify-end">
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                >
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="flex gap-2 justify-end">
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="animate-pulse odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+                >
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="h-3 bg-slate-300 rounded-full"></div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="flex gap-2 justify-end">
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                      <div class="h-3 w-8 bg-slate-300 rounded-full"></div>
+                    </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="flex justify-end">
-            <!-- drawer init and toggle -->
-            <div class="text-center">
-              <button
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                type="button"
-                data-drawer-target="drawer-right-example"
-                data-drawer-show="drawer-right-example"
-                data-drawer-placement="right"
-                aria-controls="drawer-right-example"
-              >
-                Add Course
-              </button>
-            </div>
+          
 
             <!-- drawer component -->
             <div
@@ -307,7 +359,7 @@
         <span class="sr-only">Close menu</span>
       </button>
       <form id="editCourseForm" action="">
-        <input type="hidden" id="editCourseId" name="id">
+        <input type="hidden" id="editCourseId" name="id" />
         <div class="mb-5">
           <label
             for="editCourseTitle"
@@ -393,10 +445,22 @@
         >
           1
         </th>
-        <td class="px-6 py-4 record-title">Special Web Design</td>
-        <td class="px-6 py-4 record-short">SWD</td>
-        <td class="px-6 py-4 text-end record-fee">300000</td>
-        <td class="px-6 py-4 text-end">
+        <td class="px-6 py-4 editable-cell record-title" data-column="title">
+          Special Web Design
+        </td>
+        <td
+          class="px-6 py-4 editable-cell record-short"
+          data-column="short_name"
+        >
+          SWD
+        </td>
+        <td
+          class="px-6 py-4 editable-cell text-end record-fee"
+          data-column="fee"
+        >
+          300000
+        </td>
+        <td class="px-6 py-4 text-end whitespace-nowrap">
           <button
             type="button"
             class="group record-edit px-3 py-2 text-xs font-medium text-center inline-flex items-center text-blue-700 bg-blue-100 rounded-lg hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:opacity-75 disabled:pointer-events-none"

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="run">Run</button>
+  <script>
+    const run = document.querySelector("#run");
+    run.addEventListener("click",() => {
+
+
+      const p = new Promise((resolve,reject) => {
+        navigator.geolocation.getCurrentPosition((coords) => {
+          resolve(coords)
+        })
+      })
+
+
+
+      p.then((data) => {
+        console.log(data);
+      })
+
+
+
+
+      // const f = fetch("https://fakestoreapi.com/products/1");
+      // console.log(f.then());
+
+      // let x;
+
+      // const p = new Promise((resolve,reject) => {
+      //   setTimeout(() => {
+      //     x = (Math.random() * 10).toFixed(0);
+      //     if(x > 5){
+      //       resolve(x)
+      //     }else{
+      //       reject(x)
+      //     }
+      //   },1500)
+      // })
+
+
+      // p.then((data) => {
+      //   console.log("resolve work");
+      //   console.log(x);
+      // },(data) => {
+      //   console.log("reject work");
+      //   console.log(x);
+      // })
+
+      // setTimeout(() => {
+      //   x = 10;
+      // },500)
+
+      // console.log(x);
+
+
+    })
+
+  </script>
+</body>
+</html>

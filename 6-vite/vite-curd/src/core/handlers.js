@@ -1,7 +1,13 @@
 import Swal from "sweetalert2";
 import { disabledForm, enableForm, toast, url } from "./functions";
-import { createCourseForm, editCourseForm, editDrawer, recordEdit, recordGroup } from "./selectors";
-import { createRecord, removeRecord } from "./record";
+import {
+  createCourseForm,
+  editCourseForm,
+  editDrawer,
+  recordEdit,
+  recordGroup,
+} from "./selectors";
+import { createRecord, removeRecord, renderRecord } from "./record";
 import { Drawer } from "flowbite";
 
 export const createCourseFormHandler = async (event) => {
@@ -107,20 +113,104 @@ export const editCourseFormHandler = (event) => {
     redirect: "follow",
   };
 
-  disabledForm(editCourseForm)
+  disabledForm(editCourseForm);
 
   fetch(url("/courses/" + currentId), options)
     .then((res) => res.json())
     .then((json) => {
-        enableForm(editCourseForm)
-        const currentRow = document.querySelector(`[data-id='${currentId}']`);
-        currentRow.querySelector(".record-title").innerText = json.title;
-        currentRow.querySelector(".record-short").innerText = json.short_name;
-        currentRow.querySelector(".record-fee").innerText = json.fee;
+      enableForm(editCourseForm);
+      const currentRow = document.querySelector(`[data-id='${currentId}']`);
+      currentRow.querySelector(".record-title").innerText = json.title;
+      currentRow.querySelector(".record-short").innerText = json.short_name;
+      currentRow.querySelector(".record-fee").innerText = json.fee;
 
-        toast("Update successfully");
-        editDrawer.hide()
-        editCourseForm.reset()
+      toast("Update successfully");
+      editDrawer.hide();
+      editCourseForm.reset();
+    });
+};
+
+export const recordGroupEditableHandler = (event) => {
+  if (event.target.classList.contains("editable-cell")) {
+    const currentId = event.target.closest("tr").getAttribute("data-id");
+    const currentColumn = event.target.getAttribute("data-column");
+    const currentContent = event.target.innerText;
+    const currentWidth =
+      parseInt(window.getComputedStyle(event.target).width) - 50;
+
+    const textInput = document.createElement("input");
+    textInput.value = currentContent;
+    textInput.style.width = currentWidth + "px";
+    textInput.className =
+      "border border-gray-500 p-1 text-sm rounded border-box";
+
+    event.target.innerText = "";
+    event.target.append(textInput);
+    textInput.focus();
+
+    textInput.addEventListener("blur", () => {
+      const newContent = textInput.value;
+      event.target.innerText = newContent;
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const data = {};
+      data[currentColumn] = newContent;
+
+      fetch(url("/courses/" + currentId), {
+        method: "PATCH",
+        headers: myHeaders,
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((json) => toast("Data Update successfully"));
+    });
+  }
+};
+
+export const searchInputHandler = (event) => {
+  event.target.previousElementSibling.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-gray-500 dark:text-gray-400 animate-spin">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+  </svg>
+  `;
+  fetch(url("/courses?title[like]=" + event.target.value))
+    .then((res) => {
+      console.log(res);
+      return res.json()
+    })
+    .then((json) => {
+      // console.log(json.length);
+      if(json.length){
+        renderRecord(json)
+      }else{
+        recordGroup.innerHTML = `
+
+        <tr>
+          <td colspan='5' class='text-center px-6 py-4'>
+          Not found <a class='underline' href='http://${location.host}'>See all</a>
+          </td>
+        </tr>
         
+        `
+        toast("Not found","error")
+      }
+      
+      event.target.previousElementSibling.innerHTML = `
+      <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                  />
+                </svg>
+      `;
     });
 };
